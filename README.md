@@ -3,7 +3,7 @@ Support tools to ease local frontend development using the built-in
 php webserver.
 
 The main goal of this repository is to allow user interface development without the need
-for an actual OPNsense deployment, which eases the process of designing frontend modules.
+for an actual Reticen8 deployment, which eases the process of designing frontend modules.
 
 Debugging (using xdebug) is supported, although keep in mind that this will slow down all requests as
 the static pages are also delivered using the php interpreter.
@@ -14,7 +14,7 @@ Requirements
 Make sure you have the same php (http://www.php.net/) and phalcon (https://phalconphp.com/) versions installed on the target to
 which you would like to deploy the test server.
 
-As of this writing OPNsense uses php *7.4.x* and Phalcon *4.1.x*.
+As of this writing Reticen8 uses php *7.4.x* and Phalcon *4.1.x*.
 
 In theory this approach should function on both unix like machines and Windows.
 
@@ -25,7 +25,7 @@ the following commands:
 
 ```
 brew install php@7.4
-brew tap phalcon/extension https://github.com/opnsense/homebrew-tap
+brew tap phalcon/extension https://github.com/reticen8/homebrew-tap
 brew install phalcon
 ```
 
@@ -38,7 +38,7 @@ Clone this repository and copy `config/config.local.php.sample` to
 configuration sample.
 
 Normally the only relevant configuration section is the `environment` section, which needs
-absolute paths to both the OPNsense core files and the plugins you wish to expose.
+absolute paths to both the Reticen8 core files and the plugins you wish to expose.
 
 For example, using the default build directories:
 
@@ -48,7 +48,7 @@ For example, using the default build directories:
         'packages'      => array(
             '/usr/plugins/security/tinc'
         ),
-        /* location of OPNsense core package */
+        /* location of Reticen8 core package */
         'coreDir'        => '/usr/core',
     )
 ```
@@ -75,11 +75,11 @@ To test drive template generation and command execution, it can be practical to 
 
 In most cases paths will differ on a development machine, but being able to generate templates and execute commands may help the development process.
 
-The documentation for configd itself can be found [here](https://docs.opnsense.org/development/backend.html)
+The documentation for configd itself can be found [here](https://docs.reticen8.org/development/backend.html)
 
 First step is to copy all the files in our service directory to your development location (the example below assumes current working directory):
 ```
-rsync -avz /<path_to_core>/src/opnsense/service/* configd
+rsync -avz /<path_to_core>/src/reticen8/service/* configd
 cd configd
 mkdir tmp
 ```
@@ -98,7 +98,7 @@ Finally let's spin up the configd process in a console (install missing python p
 python configd.py console
 ```
 
-Symlink the socket to the expected location (which OPNsense uses) so both our UI and command
+Symlink the socket to the expected location (which Reticen8 uses) so both our UI and command
 line tools can reach it:
 ```
 sudo ln -s /<install location>/configd/tmp/configd.socket /var/run/configd.socket

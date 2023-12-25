@@ -1,6 +1,6 @@
 <?php
 /**
- *    Copyright (C) 2018 Deciso B.V.
+ *    Copyright (C) 2018 Reticen8 Technologies
  *
  *    All rights reserved.
  *
@@ -43,7 +43,7 @@ try {
     /**
      * Read services
      */
-    include $config->environment->coreDir . "/src/opnsense/mvc/app/config/services_api.php";
+    include $config->environment->coreDir . "/src/reticen8/mvc/app/config/services_api.php";
 
     /**
      * local webserver might have moved Authorization header, move it back

@@ -1,6 +1,6 @@
 <?php
 /**
- *    Copyright (C) 2018 Deciso B.V.
+ *    Copyright (C) 2018 Reticen8 Technologies
  *
  *    All rights reserved.
  *

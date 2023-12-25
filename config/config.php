@@ -1,6 +1,6 @@
 <?php
 /**
- *    Copyright (C) 2018 Deciso B.V.
+ *    Copyright (C) 2018 Reticen8 Technologies
  *
  *    All rights reserved.
  *
@@ -68,13 +68,13 @@ foreach ($conf->environment->packages as $package) {
 
 foreach ($packages as $package) {
     $packageDirs = array(
-        "controllersDir" => preg_replace('#/+#','/',"{$package}/src/opnsense/mvc/app/controllers/"),
-        "modelsDir" => preg_replace('#/+#','/',"{$package}/src/opnsense/mvc/app/models/"),
-        "viewsDir" => preg_replace('#/+#','/',"{$package}/src/opnsense/mvc/app/views/"),
-        "libraryDir" => preg_replace('#/+#','/',"{$package}/src/opnsense/mvc/app/library/"),
-        "docroot" => preg_replace('#/+#','/',"{$package}/src/opnsense/www/"),
+        "controllersDir" => preg_replace('#/+#','/',"{$package}/src/reticen8/mvc/app/controllers/"),
+        "modelsDir" => preg_replace('#/+#','/',"{$package}/src/reticen8/mvc/app/models/"),
+        "viewsDir" => preg_replace('#/+#','/',"{$package}/src/reticen8/mvc/app/views/"),
+        "libraryDir" => preg_replace('#/+#','/',"{$package}/src/reticen8/mvc/app/library/"),
+        "docroot" => preg_replace('#/+#','/',"{$package}/src/reticen8/www/"),
         "contrib" => array(
-            preg_replace('#/+#','/',"{$package}/src/opnsense/contrib/"),
+            preg_replace('#/+#','/',"{$package}/src/reticen8/contrib/"),
             preg_replace('#/+#','/',"{$package}/contrib/")
         )
     );

@@ -1,6 +1,6 @@
 <?php
 /**
- *    Copyright (C) 2018 Deciso B.V.
+ *    Copyright (C) 2018 Reticen8 Technologies
  *
  *    All rights reserved.
  *
@@ -32,7 +32,7 @@ return new PhalconConfig(array(
     'application' => array(
             /* Usually keep defaults as is */
             'cacheDir'       => __DIR__ . '/../cache/',
-            'baseUri'        => '/opnsense_gui/',
+            'baseUri'        => '/reticen8_gui/',
     ),
     'globals' => array(
         /* Usually keep defaults as is */
@@ -45,7 +45,7 @@ return new PhalconConfig(array(
         /* packages to include in setup */
         'packages'      => array(
         ),
-        /* location of OPNsense core package */
-        'coreDir'        => '{root_of_OPNsense_core_repo}',
+        /* location of Reticen8 core package */
+        'coreDir'        => '{root_of_Reticen8_core_repo}',
     )
 ));

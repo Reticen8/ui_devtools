@@ -1,6 +1,6 @@
 <?php
 /**
- *    Copyright (C) 2018-2022 Deciso B.V.
+ *    Copyright (C) 2018-2022 Reticen8 Technologies
  *
  *    All rights reserved.
  *
@@ -62,7 +62,7 @@ function view_file_exists($filename)
 {
     foreach (FactoryDefault::getDefault()->get('config')->application->docroot as $path) {
         // check registered document roots for existence of $filename
-        $root_dir = "/usr/local/opnsense/www/";
+        $root_dir = "/usr/local/reticen8/www/";
         if (strpos($filename, $root_dir) === 0) {
             $check_filename = $path . substr($filename, strlen($root_dir));
             if (file_exists($check_filename)){
@@ -102,7 +102,7 @@ try {
     /**
      * Read services
      */
-    include $config->environment->coreDir . "/src/opnsense/mvc/app/config/services.php";
+    include $config->environment->coreDir . "/src/reticen8/mvc/app/config/services.php";
 
     /**
      * Handle the request
@@ -110,8 +110,8 @@ try {
     $application = new \Phalcon\Mvc\Application($di);
 
     // always flush caches for local testing
-    (new \OPNsense\Base\Menu\MenuSystem())->invalidateCache();
-    (new \OPNsense\Core\ACL())->invalidateCache();
+    (new \Reticen8\Base\Menu\MenuSystem())->invalidateCache();
+    (new \Reticen8\Core\ACL())->invalidateCache();
     echo $application->handle($_SERVER['REQUEST_URI'])->getContent();
 } catch (\Exception $e) {
     echo $e->getMessage();

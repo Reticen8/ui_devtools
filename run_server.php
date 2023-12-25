@@ -1,6 +1,6 @@
 <?php
 /**
- *    Copyright (C) 2018 Deciso B.V.
+ *    Copyright (C) 2018 Reticen8 Technologies
  *    Copyright (C) 2018 Fabian Franz
  *
  *    All rights reserved.
@@ -68,10 +68,10 @@ $run_command[] = "-d open_basedir=";
 $run_command[] = "-S localhost:8000";
 
 // set document root
-$run_command[] = str_replace('//', '/', "-t {$config->environment->coreDir}/src/opnsense/www");
+$run_command[] = str_replace('//', '/', "-t {$config->environment->coreDir}/src/reticen8/www");
 
 // .htaccess alternative routing
-copy(__DIR__ . '/public/.htrouter.php', "{$config->environment->coreDir}/src/opnsense/www/.htrouter.php");
+copy(__DIR__ . '/public/.htrouter.php', "{$config->environment->coreDir}/src/reticen8/www/.htrouter.php");
 $run_command[] = ".htrouter.php";
 
 // set our working directory in the php environment in which the server runs
@@ -81,5 +81,5 @@ putenv("DEV_WORKDIR=".__DIR__);
 $cmd_action = implode(' ', $run_command) ;
 echo "{$cmd_action}\n";
 
-chdir("{$config->environment->coreDir}/src/opnsense/www");
+chdir("{$config->environment->coreDir}/src/reticen8/www");
 exec($cmd_action);
